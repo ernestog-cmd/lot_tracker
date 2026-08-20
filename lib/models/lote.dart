@@ -54,3 +54,11 @@ const List<String> estatusDisponibles = [
   'detenido',
   'liberado',
 ];
+
+const List<String> departamentosDisponibles = [
+  'Producción',
+  'Calidad',
+  'Regulatorio',
+  'Logística',
+  'Mantenimiento',
+];

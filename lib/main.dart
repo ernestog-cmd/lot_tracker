@@ -5,6 +5,7 @@ import 'firebase_options.dart';
 import 'services/auth_service.dart';
 import 'screens/tablero_screen.dart';
 import 'screens/login_screen.dart';
+import 'utils/estatus_colores.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
