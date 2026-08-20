@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "770107008614",
+    "project_id": "sterile-lot-tracker",
+    "storage_bucket": "sterile-lot-tracker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770107008614:android:8566bc1a6d12af1a5eafa7",
+        "android_client_info": {
+          "package_name": "com.example.lot_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjh5vnHMnFzdDqMLqMprq4AZqJO7JGJf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
