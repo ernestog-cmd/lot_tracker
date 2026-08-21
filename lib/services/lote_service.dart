@@ -10,13 +10,14 @@ class LoteService {
   Future<void> crearLote({
     required String numeroLote,
     required String areaResponsable,
+    required String creadoPor,
   }) async {
     await _lotesRef.add({
       'numero_lote': numeroLote,
       'estatus': 'listo para auditoria de calidad',
       'area_responsable': areaResponsable,
       'comentario': '',
-      'historial': ['Lote registrado por $areaResponsable'],
+      'historial': ['Lote registrado por $creadoPor, enviado a $areaResponsable'],
       'fecha_actualizacion': Timestamp.now(),
     });
   }

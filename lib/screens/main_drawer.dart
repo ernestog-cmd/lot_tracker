@@ -56,7 +56,12 @@ class MainDrawer extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.logout, color: Colors.red),
               title: const Text('Cerrar sesion', style: TextStyle(color: Colors.red)),
-              onTap: () => AuthService().cerrarSesion(),
+              onTap: () async {
+                await AuthService().cerrarSesion();
+                if (context.mounted) {
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                }
+              },
             ),
             const SizedBox(height: 12),
           ],

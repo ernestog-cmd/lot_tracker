@@ -170,6 +170,10 @@ class DetalleLoteScreen extends StatelessWidget {
           actions: [
             TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF0057B8),
+                foregroundColor: Colors.white,
+              ),
               onPressed: () async {
                 if (nuevoEstatus == 'detenido' && comentarioController.text.trim().isEmpty) {
                   setStateDialog(() => errorComentario = 'Debes indicar el motivo');

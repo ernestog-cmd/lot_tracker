@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../models/lote.dart';
 import '../services/lote_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import '../models/usuario.dart';
+import '../services/usuario_service.dart';
 
 class CrearLoteScreen extends StatefulWidget {
   const CrearLoteScreen({super.key});
@@ -18,9 +21,12 @@ class _CrearLoteScreenState extends State<CrearLoteScreen> {
   Future<void> _guardarLote() async {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _guardando = true);
+    final uid = FirebaseAuth.instance.currentUser!.uid;
+    final usuario = await UsuarioService().obtenerUsuario(uid).first;
     await _loteService.crearLote(
       numeroLote: _numeroController.text.trim(),
       areaResponsable: _areaSeleccionada!,
+      creadoPor: usuario?.nombre ?? 'Usuario desconocido',
     );
     if (mounted) Navigator.pop(context);
   }

@@ -54,7 +54,12 @@ class PerfilScreen extends StatelessWidget {
                     ),
                     icon: const Icon(Icons.logout),
                     label: const Text('Cerrar sesion'),
-                    onPressed: () => AuthService().cerrarSesion(),
+                    onPressed: () async {
+                      await AuthService().cerrarSesion();
+                      if (context.mounted) {
+                        Navigator.of(context).popUntil((route) => route.isFirst);
+                      }
+                    },
                   ),
                 ),
               ],
